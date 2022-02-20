@@ -1,8 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Pallates from './components/pallates';
-import Navbar from './components/navbar';
-import { useState,useEffect,useLayoutEffect } from 'react';
+
+import { useState,useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Saved from './components/saved';
 import Homepage from './components/homepage';
@@ -16,7 +15,7 @@ function hexgenerator(){
    
     
     let list = [];
-    if(pallates.length!=0){
+    if(pallates.length!==0){
       
      
       for(let i=0;i<5;i++){
@@ -59,7 +58,7 @@ function hexgenerator(){
     
     setpallates(list);
   }
-  useLayoutEffect(() => {
+  useEffect(() => {
     hexgenerator();
   
     

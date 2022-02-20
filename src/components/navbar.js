@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 
 
@@ -11,9 +10,12 @@ export default function Navbar(props) {
         if(existingEntries == null) existingEntries = [];
        console.log(existingEntries);
        existingEntries.map((pallate)=>{
+         
            if(JSON.stringify(props.colors)===JSON.stringify(pallate)){
                console.log(true);
        }
+       return ;
+
        })
         var entry = props.colors;
         localStorage.setItem("pallate", JSON.stringify(entry));
