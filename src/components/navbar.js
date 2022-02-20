@@ -9,17 +9,23 @@ export default function Navbar(props) {
         var existingEntries = JSON.parse(localStorage.getItem("savedcolorpallates"));
         if(existingEntries == null) existingEntries = [];
        console.log(existingEntries);
+       var flag = true;
        existingEntries.forEach(pallate => {
         if(JSON.stringify(props.colors)===JSON.stringify(pallate)){
-          console.log(true);
+          
+          flag=false;
+         
   }
          
        });
+       if(flag){
         var entry = props.colors;
         localStorage.setItem("pallate", JSON.stringify(entry));
        
         existingEntries.push(entry);
         localStorage.setItem("savedcolorpallates", JSON.stringify(existingEntries));
+       }
+       
       
     
     }
@@ -27,6 +33,7 @@ export default function Navbar(props) {
     <div style={{width: "100%"}}>
         <Button variant="outlined" style={{color: "black",borderColor: "black",float: "right",margin: "1rem 1rem 1rem 1rem"}} onClick={()=>{props.generator()}}>Genearte</Button>
         <Button variant="outlined" style={{color: "black",borderColor: "black",float: "right",margin: "1rem 1rem 1rem 1rem"}} onClick={()=>{savecolorpallate()}}>Save</Button>
+        <a href="/saved"><Button variant="outlined" style={{color: "black",borderColor: "black",float: "right",margin: "1rem 1rem 1rem 1rem"}} >Saved</Button></a>
        
 
     </div>

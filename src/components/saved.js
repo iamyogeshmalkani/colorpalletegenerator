@@ -11,7 +11,7 @@ export default function Saved() {
              
              <div style={{width: "50%",margin: "auto"}}>
                  <h1>Saved Pallates</h1>
-         {cpallates.map((p)=>{
+         {cpallates?.map((p)=>{
           return(
               <div style={{display: "flex", width: "100vh", margin: "auto",marginTop: "1rem"}}>
                    {p.map((pallate)=>{
@@ -40,7 +40,7 @@ export default function Saved() {
      
           
       {
-          colors.map((color)=>{
+          colors?.map((color)=>{
               return(
                 <div className="singlecolor" style={{ background: `#${color}` }}>
                 <p style={{fontSize: "0.7rem"}}>#{color}</p>
