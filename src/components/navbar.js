@@ -11,7 +11,7 @@ export default function Navbar(props) {
         if(existingEntries == null) existingEntries = [];
        console.log(existingEntries);
        existingEntries.map((pallate)=>{
-           if(JSON.stringify(props.colors)==JSON.stringify(pallate)){
+           if(JSON.stringify(props.colors)===JSON.stringify(pallate)){
                console.log(true);
        }
        })
