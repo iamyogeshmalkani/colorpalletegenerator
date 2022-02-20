@@ -9,14 +9,12 @@ export default function Navbar(props) {
         var existingEntries = JSON.parse(localStorage.getItem("savedcolorpallates"));
         if(existingEntries == null) existingEntries = [];
        console.log(existingEntries);
-       existingEntries.map((pallate)=>{
+       existingEntries.forEach(pallate => {
+        if(JSON.stringify(props.colors)===JSON.stringify(pallate)){
+          console.log(true);
+  }
          
-           if(JSON.stringify(props.colors)===JSON.stringify(pallate)){
-               console.log(true);
-       }
-       return ;
-
-       })
+       });
         var entry = props.colors;
         localStorage.setItem("pallate", JSON.stringify(entry));
        

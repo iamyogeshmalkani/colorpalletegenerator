@@ -59,10 +59,28 @@ function hexgenerator(){
     setpallates(list);
   }
   useEffect(() => {
-    hexgenerator();
+    let available = '1234567890abcdef';
+    let availableLength = available.length;
+   
+    
+    let list = [];
+    for (let i = 0; i < 5; i++) {
+      let hex="";
+      for (let x = 0; x < 6; x++) {
+        hex += available.charAt(Math.floor(Math.random() * availableLength));
+       
+      }
+      list.push(hex);
+      
+
+     
+        
+     
+    }
+   setpallates(list);
   
     
-  }, [])
+  },[])
   function  updatedlocked  (ind,str){
     if(str==="add"){
       console.log(locked);
