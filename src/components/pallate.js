@@ -5,8 +5,39 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { IconButton } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Pallate(props) {
+  const [open, setOpen] = React.useState(false);
+  const [snackbarmessage,setsnackbarmessage] = useState("");
+
+ 
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <Button color="secondary" size="small" onClick={handleClose}>
+        UNDO
+      </Button>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
   
   console.log(props.index);
   const [islocked,setislocked]= useState(false);
@@ -25,6 +56,8 @@ export default function Pallate(props) {
   }
   function copycolor(){
     navigator.clipboard.writeText(props.color);
+    setOpen(true);
+    setsnackbarmessage("color code copied");
 
   }
   function addfavouritecolor(){
@@ -42,6 +75,8 @@ export default function Pallate(props) {
     localStorage.setItem("savedcolors", JSON.stringify(existingEntries));
 
   }
+  setOpen(true);
+  setsnackbarmessage("color added to favourite");
     
   }
   return (
@@ -60,9 +95,20 @@ export default function Pallate(props) {
         {!islocked ?<LockOpenIcon /> : <LockIcon/>}
       
       </IconButton>
+     <p className="pallatename" style={{marginTop: "2rem"}}> #{props.color}</p>
         
     </div>
-    <p>#{props.color}</p>
+    <div>
+     
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={snackbarmessage}
+        action={action}
+      />
+    </div>
+  
     </div>
   )
 }
