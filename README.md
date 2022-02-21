@@ -1,4 +1,4 @@
-**Random Color Pallates Geneartor(https://colorpallates.netlify.app/):**
+**Random Color Palletes Generator(https://colorpallates.netlify.app/):**
 
 In this app you can generate random color palletes. Features :
 1. You can lock colors in the pallates.
