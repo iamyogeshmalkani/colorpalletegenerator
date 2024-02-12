@@ -9,3 +9,7 @@ In this app you can generate random color palletes. Features :
 ![pallate1](https://user-images.githubusercontent.com/69340657/154854672-bcc549b9-6064-4c6e-b0e7-c8366670e666.png)
 ![pallates2](https://user-images.githubusercontent.com/69340657/154854670-76cd0180-831a-46dd-ac35-87844ecf8efc.png)
 
+
+
+https://github.com/iamyogeshmalkani/colorpalletegenerator/assets/69340657/388df31a-e54b-45cf-b6af-5f57762a330e
+
